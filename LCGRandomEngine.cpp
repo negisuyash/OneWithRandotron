@@ -15,7 +15,14 @@ bigNumber borlandCRandom(bigNumber x0=0ULL){
 
 // A = 214013, B = 2531011, M = 2^32
 
-bigNumber MicrosoftVisualRandom(bigNumber x0=0){
+bigNumber microsoftVisualRandom(bigNumber x0=0){
     bigNumber m= 1ULL << 32;
     return (214013ULL * x0 + 2531011ULL) % m;
+}
+
+// A = 134775813, B = 1, M = 2^32 - 1 
+
+bigNumber turboPascalRandom(bigNumber x0=0){
+    bigNumber m= 1ULL << 32;
+    return (134775813ULL * x0 + 1ULL) % (m - 1ULL);
 }
